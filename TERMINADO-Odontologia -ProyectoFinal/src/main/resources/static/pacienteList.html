@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Clinica Odontologica</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   
+    <!--Enlace con js-->
+    <script type="text/javascript" src="/js/get_paciente.js"></script>
+    <script type="text/javascript" src="/js/put_paciente.js"></script>
+    <script type="text/javascript" src="/js/delete_paciente.js"></script>
+    <!----------------------->
+
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="/index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pacienteRegistro.html">Agregar nuevo</a>
+        </li>
+      
+    </ul>
+
+    <div id="div_paciente_table">
+        <h1>Pacientes</h1>
+        <div class="row col-md-6 table-responsive">
+            <table id="pacienteTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    
+                </tr>
+                </thead>
+                <tbody id="pacienteTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-sm-7" style = "display: none;" id="div_paciente_updating"></div>
+       <!--Formulario para modificar paciente-->
+        <form id="update_paciente">
+            <h5>Modificar Paciente</h5>
+            <div class="form-group">
+                <label class="control-label" for="id">ID:</label>
+                <input type="number" class="form-control" id="pacienteID"
+                       name="id" readonly></input>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre"
+                       placeholder="Ingrese el nombre"
+                       name="nombre" required></input>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="apellido">Apellido:</label>
+                <input type="text" class="form-control" id="apellido"
+                       placeholder="Ingrese el apellido"
+                       name="apellido" required></input>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="dni">DNI:</label>
+                <input type="text" class="form-control" id="dni"
+                       placeholder="Ingrese numero DNI"
+                       name="dni" required></input>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="fecha">Fecha de Registro:</label>
+                <input type="date" class="form-control" id="fecha"
+                       placeholder="Ingrese fecha (yyyy-mm-dd)"
+                       name="fecha" pattern="\d{4}-\d{2}-\d{2}" placeholder="yyyy-mm-dd" required></input>
+            </div>
+
+            <div>
+                <h6>Registro Domicilio</h6>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Calle"> Calle:</label>
+                <input type="text" class="form-control" id="calle"
+                       placeholder="Ingrese Calle"
+                       name="calle" required></input>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="numero"> Numero:</label>
+                <input type="number" class="form-control" id="numero"
+                       placeholder="Ingrese Numero"
+                       name="numero" required></input>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="ciudad"> Ciudad:</label>
+                <input type="text" class="form-control" id="ciudad"
+                       placeholder="Ingrese Ciudad"
+                       name="ciudad" required></input>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="departamento"> Departamento:</label>
+                <input type="text" class="form-control" id="departamento"
+                       placeholder="Ingrese Departamento"
+                       name="departamento" required></input>
+            </div>
+
+
+            <button type="submit" class="btn btn-danger"
+                    id="btn-update-paciente">Modificar</button>
+        </form>
+    </div>
+
+
+</div>
+</body>
+</html>

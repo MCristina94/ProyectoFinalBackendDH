@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Clinica Odontologica</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   
+    <!--Enlace con js-->
+    <script type="text/javascript" src="/js/get_turno.js"></script>
+    <script type="text/javascript" src="/js/put_turno.js"></script>
+    <script type="text/javascript" src="/js/delete_turno.js"></script>
+    <!----------------------->
+
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="/index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/turnoRegistro.html">Agregar nuevo</a>
+        </li>
+        
+    </ul>
+
+    <div id="div_turno_table">
+        <h1>Turnos Agendados</h1>
+        <div class="row col-md-6 table-responsive">
+            <table id="turnoTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha Turno</th>
+                    <th>ID Odontologo</th>
+                    <th>ID Paciente</th>
+                </tr>
+                </thead>
+                <tbody id="turnoTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-sm-7" style = "display: none;" id="div_turno_updating"></div>
+       <!--Formulario para modificar turno-->
+        <form id="update_turno">
+            <h5>Modificar Turno</h5>
+            <div class="form-group">
+                <label class="control-label" for="id">ID:</label>
+                <input type="number" class="form-control" id="turnoID"
+                       name="id" readonly></input>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Fecha-Turno">Fecha y hora del Turno:</label>
+                <input type="datetime-local" class="form-control" id="fechaTurno"
+                       placeholder="Ingrese la fecha y hora para asignación de turno"
+                       name="fechaTurno" required></input>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="ID-odontologo">ID Odontologo:</label>
+                <input type=number class="form-control" id="IDodontologo"
+                       placeholder="Ingrese el ID del odontologo"
+                       name="ID-odontologo" required></input>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="ID-paciente">ID Paciente:</label>
+                <input type=number class="form-control" id="IDpaciente"
+                       placeholder="Ingrese el ID del paciente"
+                       name="ID-paciente" required></input>
+            </div>
+
+
+            <button type="submit" class="btn btn-danger"
+                    id="btn-update-turno">Modificar</button>
+        </form>
+    </div>
+
+
+
+</div>
+</body>
+</html>
